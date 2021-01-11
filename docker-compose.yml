@@ -1,4 +1,4 @@
-version: '3.4'
+version: '2'
 services:
   jira:
     image: cptactionhank/atlassian-jira:7.9.2
@@ -29,6 +29,8 @@ services:
     restart: always
     volumes:
       - database-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=sonar
   nginx:
     image: nginx
     restart: always
